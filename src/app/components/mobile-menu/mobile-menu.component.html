@@ -1,0 +1,79 @@
+<div class="mobile-menu-overlay"></div><!-- End .mobil-menu-overlay -->
+<div class="mobile-menu-container">
+    <div class="mobile-menu-wrapper">
+        <span class="mobile-menu-close"><i class="icon-close"></i></span>
+        <a href="index.html" class="logo">
+            <img src="assets/images/footer.png" alt="Logo" width="180" height="25" style="margin-left: 15%;">
+        </a>
+
+        <nav class="mobile-nav">
+            <ul class="mobile-menu">
+                <li class="active">
+                    <a href="index.html">Home</a>
+
+                </li>
+                <li>
+                    <a href="/shop">Shop</a>
+                    <div class="megamenu megamenu-sm">
+                        <div class="row no-gutters">
+                            <div class="col-md-6">
+                                <div class="menu-col">
+
+
+                                    <ul>
+                                        <li *ngFor="let i of category"><a style="cursor: pointer;" href="/shop" >{{i.name}}</a></li>
+
+
+                                    </ul>
+                                </div>
+                                <!-- End .menu-col -->
+                            </div>
+
+                            <!-- End .col-md-6 -->
+                        </div>
+                        <!-- End .row -->
+                    </div>
+
+
+
+                </li>
+                
+                <li>
+                    <a href="/whislist" class="sf-with-ul">Wishlist</a>
+                </li>
+                
+               
+               
+               
+                <li>
+                    <a href="#trends" class="sf-with-ul">TRENDS</a>
+                </li>
+                <li>
+                    <!--  app-view-blogs -->
+                    <a href="/view-blogs" class="sf-with-ul">Blog</a>
+                </li>
+                <li>
+                    <a href="#feedbacks" class="sf-with-ul">FEEDBACKS</a>
+                </li>
+                <li>
+                    <a href="/contact"  class="sf-with-ul">Contact Us</a>
+                </li>
+                <li>
+                    <a style="cursor:pointer; color: white;" (click)="User()" class="sf-with-ul">Account</a>
+                </li>
+
+
+            </ul>
+        </nav><!-- End .mobile-nav -->
+
+        <div class="social-icons">
+            <a href="/error" class="social-icon"  title="Facebook"><i
+                            class="icon-facebook-f"></i></a>
+            <a href="/error" class="social-icon"  title="Twitter"><i class="icon-twitter"></i></a>
+            <a href="/error" class="social-icon"  title="Instagram"><i
+                             class="icon-instagram"></i></a>
+            <a href="/error" class="social-icon"  title="Youtube"><i class="icon-youtube"></i></a>
+        </div><!-- End .social-icons -->
+    </div><!-- End .mobile-menu-wrapper -->
+
+</div>

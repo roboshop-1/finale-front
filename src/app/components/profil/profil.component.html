@@ -1,0 +1,120 @@
+<app-header></app-header>
+
+<!--bideyet profile-->
+<div class="page-wrapper">
+
+	<div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17"
+		style="background-image: url('assets/images/edit-user.jpg')">
+
+
+
+		<!--END PROFILE-->
+
+
+
+		<!--Bideyet INFOS -->
+		<div class="page-content">
+
+			<div class="checkout">
+				<div class="container" >
+
+
+					<div class="row">
+						<aside class="col-lg-3">
+							<div class="summary">
+								<h3 class="summary-title">YOUR PERSONAL INFOS</h3>
+								<!-- End .summary-title -->
+								<h6>Name :</h6>
+								<p>{{user.fname}} {{user.lname}}</p>
+								<br>
+								<h6>Email Adress :</h6>
+								<p>{{user.email}}</p>
+								<br>
+								<h6>Town/City :</h6>
+								<p>{{user.city}}</p>
+								<br>
+								<h6>State/Country :</h6>
+								<p>{{user.country}}</p>
+								<br>
+								<h6>Postcode :</h6>
+								<p>{{user.postcode}}</p>
+								<br>
+								<h6>Phone Number :</h6>
+								<p>{{user.phone}}</p>
+								<br>
+								<p> <a routerLink="/edit-user" (click)="EditUser(user._id)">Edit <i
+											class="icon-edit"></i></a></p>
+
+							</div>
+							<!-- End .summary -->
+						</aside>
+						<!-- End .col-lg-3 -->
+
+
+
+
+
+
+
+
+
+						<aside class="col-lg-3">
+							<div class="summary">
+								<h3 class="summary-title">YOUR ORDERS</h3>
+								<!-- End .summary-title -->
+								<table class="table table-summary">
+									<thead>
+										<tr>
+											<th>Product</th>
+											<th>Total</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr *ngFor=" let p of panier">
+											<td><a style="cursor:pointer;" (click)="viewProduct(p.name)">{{p.name}}</a>
+											</td>
+											<td>${{p.total}}</td>
+										</tr>
+										<tr class="summary-total">
+											<td>Total:</td>
+											<td>${{price}}</td>
+										</tr>
+										<!-- End .summary-total -->
+									</tbody>
+								</table>
+								<!-- End .table table-summary -->
+								<a style="cursor: pointer;" routerLink="/cart" data-toggle="modal"
+									class="btn btn-outline-primary-2 btn-order btn-block">PROCEED TO PAYMENT</a>
+
+								<a style="cursor: pointer;" (click)="Logout()" data-toggle="modal"
+									class="btn btn-outline-primary-2 btn-order btn-block">Logout</a>
+
+
+
+							</div>
+							<!-- End .summary -->
+						</aside>
+
+
+
+					</div>
+					<!-- End .row -->
+
+				</div>
+				<!-- End .container -->
+			</div>
+			<!-- End .checkout -->
+
+			<!-- End .modal-content -->
+		</div>
+		<!-- End .modal-dialog -->
+	</div>
+	<!-- End .modal -->
+
+
+
+</div>
+
+<!-- End .page-content -->
+<app-mobile-menu></app-mobile-menu>
+<app-footer></app-footer>

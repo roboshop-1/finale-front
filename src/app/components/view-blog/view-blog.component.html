@@ -1,0 +1,133 @@
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/icons/site.html">
+<link rel="mask-icon" href="/assets/images/icons/safari-pinned-tab.svg" color="#666666">
+<link rel="shortcut icon" href="/assets/images/icons/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="Molla">
+<meta name="application-name" content="Molla">
+<meta name="msapplication-TileColor" content="#cc9966">
+<meta name="msapplication-config" content="assets/images/icons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<app-header></app-header>
+
+<main class="main">
+    <!-- <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0"> -->
+    <!-- <div class="container"> -->
+    <!-- <ol class="breadcrumb"> -->
+    <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li> -->
+    <!-- <li class="breadcrumb-item"><a href="#">Blog</a></li> -->
+    <!-- <li class="breadcrumb-item active" aria-current="page">Fullwidth</li> -->
+    <!-- </ol> -->
+    <!-- </div> -->
+    <!-- </nav> -->
+
+    <div class="page-content">
+        <figure style="margin-left: 8%;">
+            <img src="{{blog.img}}" alt="image desc" >
+        </figure><!-- End .entry-media -->
+        <div class="container">
+            <article class="entry single-entry entry-fullwidth">
+                <div class="row">
+                    <div class="col-lg-11">
+                        <div class="entry-body">
+                            <div class="entry-meta">
+                                <span class="entry-author">
+                                    by <a style="cursor: pointer;font-size:16px ;color:#c96">{{blog.author}}</a>
+                                </span>
+                                <span class="meta-separator">|</span>
+                                <a style="cursor: pointer;font-size:16px ;color:#c96">{{blog.date | date}}</a>
+                            </div><!-- End .entry-meta -->
+
+                            <h2 class="entry-title entry-title-big">
+                                {{blog.title}}
+                            </h2><!-- End .entry-title -->
+
+                            <div class="entry-cats">
+                              
+
+                            </div><!-- End .entry-cats -->
+
+                            <div class="entry-content editor-content">
+
+                                <p style="font-size: 18px; color: black;">{{blog.description1}}</p>
+
+                                <div class="pb-1"></div><!-- End .pb-1 -->
+
+
+
+                                <div class="pb-1"></div><!-- End .pb-1 -->
+
+
+
+                                <blockquote>
+                                    <p>“{{blog.quote}} ”</p>
+                                </blockquote>
+
+
+
+
+
+
+                                <div class="pb-1"></div><!-- End .pb-1 -->
+
+                                <img style="margin-left: 15%;width: 85%;" src="{{blog.imgg}}" alt="image">
+
+                                <div class="pb-1"></div><!-- End .pb-1 -->
+
+                                <p style="font-size: 18px; color: black;">{{blog.description2}}.</p>
+                            </div><!-- End .entry-content -->
+
+
+                        </div><!-- End .entry-body -->
+                    </div><!-- End .col-lg-11 -->
+
+                </div><!-- End .row -->
+
+
+
+
+            </article><!-- End .entry -->
+
+            <!-- <nav class="pager-nav" aria-label="Page navigation"> -->
+            <!-- <a class="pager-link pager-link-prev" href="#" aria-label="Previous" tabindex="-1"> -->
+            <!-- Previous Post -->
+            <!--                      -->
+            <!-- </a> -->
+
+            <!-- <a class="pager-link pager-link-next" href="#" aria-label="Next" tabindex="-1"> -->
+            <!-- Next Post -->
+            <!--                      -->
+            <!-- </a> -->
+            <!-- </nav> -->
+
+        </div>
+    </div>
+
+    <div class="blog-posts">
+        <div class="container">
+            <div class="heading text-center">
+                <h2 class="title" id="blog">Related Blog Posts</h2>
+                <!-- End .title -->
+                <!-- <p class="title-desc">Donec nec justo eget felis facilisis fermentum.</p> -->
+                <!-- End .title-desc -->
+            </div>
+            <!-- End .heading -->
+            <app-home-blog></app-home-blog>
+            <!-- End .container -->
+        </div>
+        <!-- End .blog-posts -->
+    </div>
+</main>
+
+
+
+
+
+
+<button id="scroll-top" title="Back to Top"><i class="icon-arrow-up"></i></button>
+<app-mobile-menu></app-mobile-menu>
+<app-footer></app-footer>
+<!-- Plugins JS File -->

@@ -1,0 +1,187 @@
+<header class="header">
+
+
+    <div class="header-middle sticky-header">
+        <div class="container">
+            <div class="header-left">
+                <button class="mobile-menu-toggler">
+                    <span class="sr-only">Toggle mobile menu</span>
+                    <i class="icon-bars"></i>
+                </button>
+
+                <a href="" class="logo">
+                    <img src="assets/images/logo2.png" alt="Logo" width="105" height="25">
+                </a>
+
+                <nav class="main-nav">
+                    <ul class="menu sf-arrows">
+                        <li class="megamenu-container active">
+                            <a href="" class="sf-with-ul">Home</a>
+                        </li>
+                        <li>
+                            <a routerLink="/shop" class="sf-with-ul">SHOP</a>
+
+                            <div class="megamenu megamenu-sm">
+                                <div class="row no-gutters">
+                                    <div class="col-md-6">
+                                        <div class="menu-col">
+                                            <div class="menu-title">Product Details</div>
+                                            <!-- End .menu-title -->
+                                            <ul>
+                                                <li *ngFor="let i of category"><a  routerLink="/shop" >{{i.name}}</a></li>
+                                                              
+                                                               
+                                            </ul>
+                                        </div>
+                                        <!-- End .menu-col -->
+                                    </div>
+                                    <!-- End .col-md-6 -->
+
+                                    <div class="col-md-6">
+                                        <div class="banner banner-overlay">
+                                            <a >
+                                                <img src="assets/images/shop.jpg" alt="Banner">
+
+                                                <div class="banner-content banner-content-bottom">
+                                                    <div class="banner-title text-white">New Trends
+                                                        <br><span><strong>spring 2019</strong></span></div>
+                                                    <!-- End .banner-title -->
+                                                </div>
+                                                <!-- End .banner-content -->
+                                            </a>
+                                        </div>
+                                        <!-- End .banner -->
+                                    </div>
+                                    <!-- End .col-md-6 -->
+                                </div>
+                                <!-- End .row -->
+                            </div>
+                            <!-- End .megamenu megamenu-sm -->
+                        </li>
+
+                        <li>
+                            <a href="#trends" class="sf-with-ul">Trends</a>
+                        </li>
+
+                        <li>
+                            <a routerLink="/view-blogs"   class="sf-with-ul">Blog</a>
+
+                        </li>
+
+                        <li>
+                            <a href="#feedbacks" class="sf-with-ul">FEEDBACKS</a>
+                        </li>
+                        <li>
+                            <a routerLink="contact.html" routerLink="/contact" class="sf-with-ul">Contact Us</a>
+                        </li>
+
+                    </ul>
+                    <!-- End .menu -->
+                </nav>
+                <!-- End .main-nav -->
+            </div>
+            <!-- End .header-left -->
+
+            <div class="header-right">
+                <div class="dropdown cart-dropdown">
+                    <div class="header-search">
+                        <a href="#" class="search-toggle" role="button" title="Search"><i class="icon-search"></i></a>
+                        <form autocomplete="off" method="get">
+                            <div class="header-search-wrapper">
+                                <!-- <label for="q" class="sr-only">Search</label> -->
+                                <input type="text" class="form-control" name="q" id="q" placeholder="Search in..." [(ngModel)]="filterTerm">
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <div *ngFor="let i of product | filter: filterTerm">
+                                        <div class="product">
+                                            <div class="product-cart-details">
+                                                <h5 class="product-title">
+                                                    <a style="cursor: pointer;" (click)="goToProduct(i._id)" >{{i.name}}</a>
+                                                </h5>
+                                                <br>
+                                            </div>
+                                            <!-- End .product-cart-details -->
+                                            <figure class="product-image-container">
+                                                <a style="cursor: pointer;" (click)="goToProduct(i._id)" class="product-image">
+                                                    <img src="{{i.img}}" alt="product">
+                                                </a>
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End .header-search-wrapper -->
+                        </form>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <a routerLink="/whislist"  class="wishlist-link">
+                        <i class="icon-heart-o"></i>
+                        <span class="wishlist-count" style="margin-left:-8px;">{{whish_number}}</span>
+
+                    </a>
+                </div>
+
+                <a routerLink="/account" class="wishlist-link" (click)="User()">
+                    <i class="icon-user"></i>
+                </a>
+
+                <div class="dropdown cart-dropdown">
+                    <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                        <i class="icon-shopping-cart"></i>
+                        <span class="cart-count">{{number}}</span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <div *ngFor="let i of panier" class="dropdown-cart-products">
+                            <div class="product">
+                                <div class="product-cart-details">
+                                    <h4 class="product-title">
+                                        <a style="cursor: pointer;" (click)="viewProduct(i.name)" >{{i.name}}</a>
+                                    </h4>
+
+                                    <span class="cart-product-info">
+                                        <span class="cart-product-qty"></span> ${{i.total}}
+                                    </span>
+                                </div>
+                                <!-- End .product-cart-details -->
+
+                                <figure class="product-image-container">
+                                    <a style="cursor: pointer;" (click)="viewProduct(i.name)" class="product-image">
+                                        <img src="{{i.img}}" alt="product">
+                                    </a>
+                                </figure>
+                                <a (click)="DeleteProduct(i)" class="btn-remove" title="Remove Product"><i
+                                        class="icon-close"></i></a>
+                            </div>
+                            <!-- End .product -->
+
+
+                        </div>
+                        <!-- End .cart-product -->
+
+                        <div class="dropdown-cart-total">
+                            <span>Total</span>
+
+                            <span class="cart-total-price">${{price}}</span>
+                        </div>
+                        <!-- End .dropdown-cart-total -->
+
+                        <div class="dropdown-cart-action">
+                            <a style="cursor: pointer;" (click)="viewCart()" class="btn btn-primary">View Cart</a>
+                            <!-- <a style="color:#bf8040"  class="btn btn-outline-primary-2"><span>Checkout</span><i -->
+                                    <!-- class="icon-long-arrow-right"></i></a> -->
+                        </div>
+                        <!-- End .dropdown-cart-total -->
+                    </div>
+                    <!-- End .dropdown-menu -->
+                </div>
+                <!-- End .cart-dropdown -->
+            </div>
+            <!-- End .header-right -->
+        </div>
+        <!-- End .container -->
+    </div>
+</header>
+<!-- End .header -->
+
+

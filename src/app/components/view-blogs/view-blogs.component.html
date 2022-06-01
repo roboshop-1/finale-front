@@ -1,0 +1,93 @@
+<app-header></app-header>
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/icons/site.html">
+<link rel="mask-icon" href="/assets/images/icons/safari-pinned-tab.svg" color="#666666">
+<link rel="shortcut icon" href="/assets/images/icons/favicon.ico">
+<meta name="apple-mobile-web-app-title" content="Molla">
+<meta name="application-name" content="Molla">
+<meta name="msapplication-TileColor" content="#cc9966">
+<meta name="msapplication-config" content="/assets/images/icons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<main class="main">
+    <div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
+        <div class="container">
+            <h1 class="page-title">BLOGS<span></span></h1>
+        </div><!-- End .container -->
+    </div><!-- End .page-header -->
+    <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2">
+
+    </nav><!-- End .breadcrumb-nav -->
+
+    <div class="page-content">
+        <div class="container">
+            <nav class="blog-nav" style="visibility: hidden;">
+                <ul class="menu-cat entry-filter justify-content-center">
+                    <li class="active"><a href="#" data-filter="*">All Blog Posts<span>12</span></a></li>
+                    <li><a href="#" data-filter=".lifestyle">Lifestyle<span>3</span></a></li>
+                    <li><a href="#" data-filter=".shopping">Shopping<span>1</span></a></li>
+                    <li><a href="#" data-filter=".fashion">Fashion<span>1</span></a></li>
+                    <li><a href="#" data-filter=".travel">Travel<span>2</span></a></li>
+                    <li><a href="#" data-filter=".hobbies">Hobbies<span>2</span></a></li>
+                </ul><!-- End .blog-menu -->
+            </nav><!-- End .blog-nav -->
+
+            <div class="entry-container max-col-2" data-layout="fitRows">
+                <div *ngFor="let b of blogs | paginate: { itemsPerPage: 4, currentPage: p }"
+                    class="entry-item lifestyle shopping col-sm-6">
+                    <article class="entry entry-grid text-center">
+                        <figure class="entry-media">
+                            <a style="cursor: pointer;" (click)="ShowDetails(b._id)">
+                                <img src="{{b.img}}" alt="image desc">
+                            </a>
+                        </figure><!-- End .entry-media -->
+
+                        <div class="entry-body">
+                            <div class="entry-meta">
+                                <span class="entry-author">
+                                    by <a style="cursor: pointer;">{{b.author}}</a>
+                                </span>
+
+
+                            </div><!-- End .entry-meta -->
+
+                            <h2 class="entry-title">
+                                <a style="cursor: pointer;" (click)="ShowDetails(b._id)">{{b.title}}</a>
+                            </h2><!-- End .entry-title -->
+
+
+
+                            <div class="entry-content">
+                                <p *ngIf="Substring(b.description1)"> {{description}} ...</p>
+                                <a style="cursor: pointer;" (click)="ShowDetails(b._id)" class="read-more">Continue
+                                    Reading</a>
+                            </div><!-- End .entry-content -->
+                        </div><!-- End .entry-body -->
+                    </article><!-- End .entry -->
+                </div><!-- End .entry-item -->
+
+
+
+            </div><!-- End .entry-container -->
+
+
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </ul>
+            </nav>
+        </div><!-- End .container -->
+    </div><!-- End .page-content -->
+</main><!-- End .main -->
+
+
+
+<button id="scroll-top" title="Back to Top"><i class="icon-arrow-up"></i></button>
+<app-mobile-menu></app-mobile-menu>
+
+<app-footer></app-footer>
